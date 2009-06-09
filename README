@@ -1,0 +1,11 @@
+monitoring server to replace nagios
+
+concepts:
+
+
+todo:
+
+  test coverage
+
+feature:
+  drb, spawn remote workers
