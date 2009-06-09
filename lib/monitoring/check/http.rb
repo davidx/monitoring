@@ -6,6 +6,7 @@ module Monitoring
       def self.run(options)
         required_argument :url, options
         begin
+          p "get #{options[:url]}"
           response = get(options[:url])
         rescue => e
 

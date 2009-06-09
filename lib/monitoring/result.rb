@@ -5,12 +5,15 @@ module Monitoring
 
     def initialize(options)
       @options = options
-      options.each {|key, value| self.instance_variable_set("@#{key}", value) }
+      options.each {|key, value|
+        self.instance_variable_set("@#{key}", value)
+      }
       @datetime = DateTime.now
+      self
     end
 
     def method_missing(name, &block)
-      return @options[name] if @options.key?(name)
+      return options[name] if options.key?(name)
       raise ArgumentError, " no such method #{name}"
     end
   end

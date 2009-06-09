@@ -1,6 +1,6 @@
 module Monitoring
   module Check
-    class BASE
+    class BASE      
       def self.run(options)
         required_argument :foo, options
 
