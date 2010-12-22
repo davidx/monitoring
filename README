@@ -1,11 +1,9 @@
 monitoring server to replace nagios
-
-concepts:
-
+Progress: protype libs and vapor
 
 todo:
 
-  test coverage
+  tdd rewrite and test coverage
 
 feature:
   drb, spawn remote workers
