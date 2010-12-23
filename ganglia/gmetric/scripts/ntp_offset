@@ -48,7 +48,7 @@ end
 
 choices=Choice.choices
 ntp_server = choices[:ntp_server]
-output = `/usr/sbin/ntpdate -d #{ntp_server} |grep "time server"`
+output = `ntpdate -d #{ntp_server} |grep "time server"`
 ntp_offset_metric_value = output.split(/\s+/)[-2]
 Ganglia.gmetric(
     :name =>"ntp_offset",
