@@ -1,0 +1,6 @@
+source :gemcutter
+gem 'roxml'
+gem 'dust'
+gem 'ohai'
+gem 'ipaddress'
+gem 'log4r'

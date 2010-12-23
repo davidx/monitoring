@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+=begin
+ Copyright (c) 2010 David Andersen | davidx.org | davidx at davidx.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+=end
+
+require 'rubygems'
+require 'choice'
+require 'fileutils'
+$:.unshift File.dirname(__FILE__) + '/../../lib'
+
+require 'ganglia'
+
+Choice.options do
+  header ''
+  header 'Specific options:'
+
+  option :file, :required => true do
+    short '-f'
+    long '--file=FILE'
+    desc 'The file\'s size to report'
+  end
+  option :metric_name do
+    short '-m'
+    long '--metric=METRIC'
+    desc 'Use alternate metric name'
+
+  end
+  option :help do
+    long '--help'
+    desc 'Show this message'
+  end
+
+end
+
+choices=Choice.choices
+file = choices[:file]
+file_name_underscored = "file_size#{file.gsub(/\//,'_')}"
+file_size_metric_value = File.size(file)
+file_size_metric_name = choices[:metric_name] || file_name_underscored
+
+Ganglia.gmetric(
+    :name => file_size_metric_name,
+    :value => file_size_metric_value ,
+    :units => :kb,
+    :type => 'uint32'
+  )
+
+

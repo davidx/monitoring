@@ -1,9 +1,0 @@
-monitoring server to replace nagios
-Progress: protype libs and vapor
-
-todo:
-
-  tdd rewrite and test coverage
-
-feature:
-  drb, spawn remote workers

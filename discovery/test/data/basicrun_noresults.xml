@@ -1,0 +1,11 @@
+<nmaprun scanner="nmap" args="nmap -sS -O -&#45;open -p 902 -oX /tmp/scanlog 10.10.10.100-253" start="1280266428"
+         startstr="Tue Jul 27 14:33:48 2010" version="5.00" xmloutputversion="1.03">
+  <scaninfo type="syn" protocol="tcp" numservices="1" services="902"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  <runstats>
+    <finished time="1280266553" timestr="Tue Jul 27 14:35:53 2010" elapsed="127.36"/>
+    <hosts up="0" down="154" total="154"/>
+    <!-- Nmap done at Tue Jul 27 14:35:53 2010; 154 IP addresses (0 hosts up) scanned in 127.36 seconds -->
+  </runstats>
+</nmaprun>

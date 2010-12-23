@@ -1,0 +1,84 @@
+<nmaprun scanner="nmap" args="nmap -p22 --open -oX /tmp/scanlog 172.16.32.1-253" start="1280270747"
+         startstr="Tue Jul 27 15:45:47 2010" version="4.68" xmloutputversion="1.02">
+  <scaninfo type="syn" protocol="tcp" numservices="1" services="22"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  <host starttime="1280270747" endtime="1280270764">
+    <status state="up" reason="arp-response"/>
+    <address addr="172.16.32.11" addrtype="ipv4"/>
+    <address addr="00:TT:29:00:66:21" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="app1" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="384" rttvar="4038" to="100000"/>
+    <uptime seconds="250641" lastboot="Mon Aug  9 07:46:45 2010" />
+  </host>
+  <host starttime="1280270747" endtime="1280270764">
+    <status state="up" reason="arp-response"/>
+    <address addr="172.16.32.12" addrtype="ipv4"/>
+    <address addr="00:0C:29:C4:DE:40" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="app2" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="331" rttvar="4043" to="100000"/>
+  </host>
+  <host starttime="1280270747" endtime="1280270764">
+    <status state="up" reason="arp-response"/>
+    <address addr="172.16.32.13" addrtype="ipv4"/>
+    <address addr="00:0C:29:72:B0:A6" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="app3" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="461" rttvar="4065" to="100000"/>
+  </host>
+  <host starttime="1280270747" endtime="1280270764">
+    <status state="up" reason="arp-response"/>
+    <address addr="172.16.32.14" addrtype="ipv4"/>
+    <address addr="00:0C:29:4F:26:BD" addrtype="mac" vendor="VMware"/>
+    <hostnames>
+      <hostname name="app4" type="PTR"/>
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="358" rttvar="4096" to="100000"/>
+  </host> 
+  <host starttime="1280270764" endtime="1280270771">
+    <status state="up" reason="arp-response"/>
+    <address addr="172.16.32.17" addrtype="ipv4"/>
+    <address addr="00:0E:23:B7:23:BC" addrtype="mac" vendor="Intel"/>
+    <hostnames/>
+    <ports>
+      <extraports state="closed" cont="1">
+        <extrareasons reason="reset" count="1"/>
+      </extraports>
+    </ports>
+    <times srtt="5110" rttvar="4627" to="100000"/>
+  </host>
+  <runstats>
+    <finished time="1280270771" timestr="Tue Jul 27 15:46:11 2010"/>
+    <hosts up="81" down="172" total="253"/>
+    <!-- Nmap done at Tue Jul 27 15:46:11 2010; 253 IP addresses (81 hosts up) scanned in 24.299 seconds -->
+  </runstats>
+</nmaprun>
